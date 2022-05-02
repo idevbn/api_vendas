@@ -18,7 +18,7 @@ class ProfileController {
 
     const updateProfile = new UpdateProfileService();
 
-    const user = updateProfile.update({
+    const user = await updateProfile.update({
       email,
       name,
       user_id,
