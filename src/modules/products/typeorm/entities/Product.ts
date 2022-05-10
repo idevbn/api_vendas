@@ -1,4 +1,4 @@
-import { OrdersProducts } from "@modules/orders/typeorm/entitites/OrdersProducts";
+import { OrdersProducts } from "@modules/orders/typeorm/entities/OrdersProducts";
 import {
   Column,
   CreateDateColumn,
