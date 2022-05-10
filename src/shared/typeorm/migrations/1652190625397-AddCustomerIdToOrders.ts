@@ -7,6 +7,7 @@ import {
 
 export class AddCustomerIdToOrders1651610338733 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
     await queryRunner.addColumn(
       "orders",
       new TableColumn({

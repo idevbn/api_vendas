@@ -33,10 +33,10 @@ class CreateOrderService {
       throw new AppError("Could not find any product with the given id.");
     }
 
-    const existProductsIds = existsProducts.map(product => product.id);
+    const existsProductsIds = existsProducts.map(product => product.id);
 
     const checkNonExistingProducts = products.filter(
-      product => !existProductsIds.includes(product.id),
+      product => !existsProductsIds.includes(product.id),
     );
 
     if (!checkNonExistingProducts.length) {
@@ -54,7 +54,7 @@ class CreateOrderService {
     if (quantityAvailable.length) {
       throw new AppError(
         `The quantity ${quantityAvailable[0].quantity}
-        is not available for ${quantityAvailable[0].id}`,
+        is not available for ${quantityAvailable[0].id}.`,
       );
     }
 

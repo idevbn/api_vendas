@@ -13,7 +13,7 @@ class OrdersController {
     return response.json(order);
   }
 
-  public async create(request: Request, response: Response) {
+  public async create(request: Request, response: Response): Promise<Response> {
     const { customer_id, products } = request.body;
 
     const createOrder = new CreateOrderService();
