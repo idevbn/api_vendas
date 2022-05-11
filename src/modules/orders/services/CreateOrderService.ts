@@ -39,7 +39,7 @@ class CreateOrderService {
       product => !existsProductsIds.includes(product.id),
     );
 
-    if (!checkNonExistingProducts.length) {
+    if (checkNonExistingProducts.length) {
       throw new AppError(
         `Could not find product ${checkNonExistingProducts[0].id}.`,
       );
